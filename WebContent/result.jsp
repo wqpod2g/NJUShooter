@@ -14,8 +14,8 @@
     <div class="container-fluid">
     	<ul class="nav nav-pills pull-right header">
             <li><a href="./login/login-1.html" id="signin-btn">登录</a></li>            
-            <li><a href="http://114.212.80.14/lab">实验室</a></li>
-            <li><a href="http://114.212.80.14/help" id="help-link">帮助</a></li>
+            <li><a href="./Search.jsp">实验室</a></li>
+            <li><a href="./Search.jsp">帮助</a></li>
         </ul>
     </div>
     
