@@ -34,7 +34,7 @@
     <div class="search-result">
     <%String query_time=(String)request.getAttribute("query_time"); %>
     <%String result_size=(String)request.getAttribute("result_size"); %>
-    <p>共找到<%=result_size %>个相关字幕 (用时<%=query_time %>毫秒)</p>
+    <p>共找到<%=result_size %>个相关字幕 (用时<%=query_time%>毫秒)</p>
     
     <c:forEach items="${sub_list}" var="str"> 
        <p><a href=""><font size="4">${str}</font></a></p> 
@@ -45,7 +45,7 @@
     
  <div class="footer navbar-fixed-bottom">
     <ul class="pull-right">
-        <li>Copyright NJU IIP</li>
+        <li>Copyright © NJU IIP</li>
         <li>|</li>
         <li>Powered by mrpod2g</li>
         <li>|</li>
