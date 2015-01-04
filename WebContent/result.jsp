@@ -35,9 +35,9 @@
     <%String query_time=(String)request.getAttribute("query_time"); %>
     <%String result_size=(String)request.getAttribute("result_size"); %>
     <p>共找到<%=result_size %>个相关字幕 (用时<%=query_time%>毫秒)</p>
-    
+   
     <c:forEach items="${sub_list}" var="str"> 
-       <p><a href=""><font size="4">${str}</font></a></p> 
+       <p><a href=Download?path=${str}><font size="4">${str}</font></a></p> 
     </c:forEach> 
     
     </div>    	

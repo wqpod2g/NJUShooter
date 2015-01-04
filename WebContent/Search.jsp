@@ -31,8 +31,6 @@
                     <input type="submit" value="搜索字幕" class="btn btn-primary btn-large" id="mrs_qbutton" name="mrs_qbutton">
                 </form>
         	</div>
-        	
-        	
     
  <div class="footer navbar-fixed-bottom">
     <ul class="pull-right">
