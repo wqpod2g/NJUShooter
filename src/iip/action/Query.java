@@ -1,6 +1,7 @@
 package iip.action;
 
 import iip.dao.SubDao;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -35,18 +36,24 @@ public class Query extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String query_words=request.getParameter("query_words");
-		System.out.println("query_words="+query_words);
-		SubDao sd=new SubDao();
-		long start=System.currentTimeMillis();
-		ArrayList<String>sub_list=sd.select(query_words);
-		long end=System.currentTimeMillis();
-		String query_time=end-start+"";
-		request.setAttribute("query_words", query_words);
-		request.setAttribute("query_time", query_time);
-		request.setAttribute("sub_list", sub_list);
-		request.setAttribute("result_size", sub_list.size()+"");
-		request.getRequestDispatcher("result.jsp").forward(request,response);
+		String query_words = new String(request.getParameter("query_words").getBytes("iso-8859-1"), "utf-8");
+		System.out.println("query_words="+query_words.length());
+		if(query_words.length()==0){
+			request.getRequestDispatcher("Search.jsp").forward(request,response);
+		}
+		else{
+			SubDao sd=new SubDao();
+			long start=System.currentTimeMillis();
+			ArrayList<String>sub_list=sd.select(query_words);
+			long end=System.currentTimeMillis();
+			String query_time=end-start+"";
+			request.setAttribute("query_words", query_words);
+			request.setAttribute("query_time", query_time);
+			request.setAttribute("sub_list", sub_list);
+			request.setAttribute("result_size", sub_list.size()+"");
+			request.getRequestDispatcher("result.jsp").forward(request,response);
+		}
+		
 	}
 	
 	/**
